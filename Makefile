@@ -11,6 +11,11 @@ docker-build:
 	docker build --pull -t tbalson/cpu .
 	@echo "image DONE"
 
+docker-build-nc:
+	@echo "building the image from docker file w/o cache..."
+	docker build --no-cache --pull -t tbalson/cpu .
+	@echo "image DONE"
+
 docker-start:
 	@echo "starting the NEW service in container..."
 	docker run  -p 8080:8080 tbalson/cpu
